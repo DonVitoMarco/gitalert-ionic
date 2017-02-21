@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Git Alert - Add</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>User Item</ion-label>
+      <ion-input type="text" [(ngModel)]="userItem"></ion-input>
+    </ion-item>
+  </ion-list>
+
+
+  <button ion-button (click)="save()">SAVE</button>
+
+
+</ion-content>

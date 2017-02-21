@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Git Alert</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <nav>
+    <button ion-button full color="light" (click)="pushPage('check')" class="btn">Check user</button>
+    <button ion-button full color="light" (click)="pushPage('settings')" class="btn">Settings</button>
+    <button ion-button full color="light" (click)="pushPage('about')" class="btn">About</button>
+  </nav>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          NOTIFICATION:
+          <button ion-button icon-right item-right color="dark" (click)="clearNotifications()">
+            Clear
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item>
+        <ion-item>
+          <button ion-button icon-right item-right (click)="createNotifications()">
+            Refresh
+            <ion-icon name="refresh"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let notification of notifications">{{ notification }}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-list>
+        <ion-item>
+          LAST SEARCH:
+          <button ion-button icon-right item-right color="dark" (click)="clearLastSearch()">
+            Clear
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-list>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <button ion-item *ngFor="let user of usernameList; let i = index" (click)="goToDetails(user)">
+            {{ user }}
+        <ion-icon name="arrow-forward" item-right></ion-icon>
+        </button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Git Alert - Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-list>
+    <ion-item>
+      TRACK USERS:
+      <button ion-button icon-right item-right (click)="add()">
+        Add
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-item *ngFor="let user of userList; let i = index">
+        {{ user.login }}
+        <button ion-button icon-right item-right color="dark" (click)="delIndex(i)">
+          Delete
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item>
+  </ion-list>
+
+
+</ion-content>
